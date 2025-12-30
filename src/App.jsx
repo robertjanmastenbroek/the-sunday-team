@@ -22,7 +22,9 @@ import {
   Bell,
   TrendingUp,
   BarChart3,
-  Globe
+  Globe,
+  Mail,
+  Send
 } from 'lucide-react';
 
 // --- LEGAL MODALS ---
@@ -62,6 +64,85 @@ const LegalModal = ({ isOpen, onClose, title, content }) => {
             Close
           </button>
         </div>
+      </div>
+    </div>
+  );
+};
+
+// --- CONTACT MODAL ---
+
+const ContactModal = ({ isOpen, onClose }) => {
+  const [formData, setFormData] = useState({ name: '', church: '', message: '' });
+
+  if (!isOpen) return null;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Encodes the message to fit safely in a mailto link
+    const subject = encodeURIComponent(`New Inquiry from ${formData.name} (${formData.church})`);
+    const body = encodeURIComponent(`Name: ${formData.name}\nChurch: ${formData.church}\n\nMessage:\n${formData.message}`);
+    
+    // Opens the user's default email client
+    window.location.href = `mailto:mastenbroekrobertjan@gmail.com?subject=${subject}&body=${body}`;
+    onClose();
+  };
+
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+      <div 
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" 
+        onClick={onClose}
+      ></div>
+      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg flex flex-col animate-scale-in">
+        <div className="flex items-center justify-between p-6 border-b border-gray-100">
+          <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+            <Mail size={20} className="text-indigo-600"/> Contact Us
+          </h3>
+          <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-500 hover:text-gray-900">
+            <X size={20} />
+          </button>
+        </div>
+        
+        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+            <input 
+              required
+              type="text" 
+              className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+              placeholder="Pastor John Doe"
+              value={formData.name}
+              onChange={(e) => setFormData({...formData, name: e.target.value})}
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Church Name</label>
+            <input 
+              required
+              type="text" 
+              className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+              placeholder="Grace Community Church"
+              value={formData.church}
+              onChange={(e) => setFormData({...formData, church: e.target.value})}
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">How can we serve you?</label>
+            <textarea 
+              required
+              rows={4}
+              className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition resize-none"
+              placeholder="I'm interested in the Kingdom Reach plan..."
+              value={formData.message}
+              onChange={(e) => setFormData({...formData, message: e.target.value})}
+            />
+          </div>
+          
+          <button type="submit" className="w-full py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition flex items-center justify-center gap-2 shadow-lg hover:shadow-indigo-500/30">
+            <Send size={18} /> Send Message
+          </button>
+          <p className="text-xs text-center text-gray-400 mt-2">This will open your default email client.</p>
+        </form>
       </div>
     </div>
   );
@@ -351,7 +432,7 @@ const PainPoints = () => (
   <section id="process" className="py-24 bg-white">
     <div className="max-w-4xl mx-auto px-6 text-center">
       <h2 className="text-3xl font-bold text-gray-900 mb-4">The "Sermon Graveyard" Problem</h2>
-      <p className="text-gray-600 mb-16 max-w-2xl mx-auto">Most sermons are preached once and then forgotten in an archive. We believe that is a stewardship issue.</p>
+      <p className="text-gray-600 mb-16 max-w-2xl mx-auto">Most sermons are preached once and then forgotten in an archive. We believe that is a clarity issue.</p>
       
       <div className="grid md:grid-cols-3 gap-8 text-left">
         {[
@@ -403,7 +484,7 @@ const TeamSection = () => (
                 Example: src="./images/family-photo.jpg" or a hosted URL.
              */}
             <img 
-              src="/Family.JPG" 
+              src="/Family.jpg" 
               alt="The Mastenbroek Family" 
               className="w-full h-full object-cover transform transition duration-700 hover:scale-105"
             />
@@ -686,14 +767,14 @@ const Pricing = () => (
   </section>
 );
 
-const Footer = ({ onOpenPrivacy, onOpenTerms }) => (
+const Footer = ({ onOpenPrivacy, onOpenTerms, onOpenContact }) => (
   <footer className="bg-gray-900 text-white border-t border-gray-800 py-16">
     <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
       <div className="text-center md:text-left">
         <span className="text-2xl font-bold text-white tracking-tighter">The Sunday Team.</span>
         <p className="text-gray-400 mt-2 text-sm max-w-xs leading-relaxed">
           Helping pastors reclaim the digital space for the Kingdom.
-          <br/>Stewardship. Technology. Truth.
+          <br/>Clarity. Technology. Truth.
         </p>
       </div>
       
@@ -705,7 +786,7 @@ const Footer = ({ onOpenPrivacy, onOpenTerms }) => (
           <FileText size={14} /> Terms of Service
         </button>
         <button 
-          onClick={() => window.open('mailto:hello@thesundayteam.com')} 
+          onClick={onOpenContact} 
           className="hover:text-white transition"
         >
           Contact
@@ -721,6 +802,7 @@ const Footer = ({ onOpenPrivacy, onOpenTerms }) => (
 export default function App() {
   const [showPrivacy, setShowPrivacy] = useState(false);
   const [showTerms, setShowTerms] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-indigo-100 selection:text-indigo-900 scroll-smooth">
@@ -736,6 +818,7 @@ export default function App() {
       <Footer 
         onOpenPrivacy={() => setShowPrivacy(true)} 
         onOpenTerms={() => setShowTerms(true)} 
+        onOpenContact={() => setShowContact(true)}
       />
       
       {/* Modals */}
@@ -750,6 +833,10 @@ export default function App() {
         onClose={() => setShowTerms(false)} 
         title="Terms of Service"
         content={TermsContent}
+      />
+      <ContactModal
+        isOpen={showContact}
+        onClose={() => setShowContact(false)}
       />
       
       {/* Global CSS for Animations */}
