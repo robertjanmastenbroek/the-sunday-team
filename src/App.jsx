@@ -484,7 +484,7 @@ const TeamSection = () => (
                 Example: src="./images/family-photo.jpg" or a hosted URL.
              */}
             <img 
-              src="/Family.jpg" 
+              src="/og-image.jpg" 
               alt="The Mastenbroek Family" 
               className="w-full h-full object-cover transform transition duration-700 hover:scale-105"
             />
