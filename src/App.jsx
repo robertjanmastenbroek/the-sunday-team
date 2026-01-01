@@ -824,7 +824,7 @@ const Pricing = () => {
               </div>
 
               <button 
-                onClick={() => window.open('https://calendly.com/', '_blank')} 
+                onClick={() => window.open('https://wa.me/31681150445?text=Hi%21%20I%27d%20like%20to%20get%20started%20with%20The%20Sunday%20Team.', '_blank')} 
                 className={`w-full py-4 rounded-xl font-bold text-base transition-all flex items-center justify-center gap-2 ${
                   plan.highlight 
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50' 
