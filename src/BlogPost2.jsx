@@ -53,7 +53,7 @@ export default function BlogPost2({ onBack }) {
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-16">
         <img 
-          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          src="/blog-2.svg"
           alt="YouTube analytics"
           className="w-full rounded-2xl shadow-lg mb-12 h-96 object-cover"
         />

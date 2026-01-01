@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <filter id="grain"><feTurbulence baseFrequency="0.8" numOctaves="1" stitchTiles="stitch" result="t"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g1)" />
+  <g opacity="0.14" filter="url(#grain)"><rect width="1200" height="675" fill="#000"/></g>
+  <g transform="translate(80,80)">
+    <rect x="0" y="0" width="520" height="515" rx="24" fill="#fff" opacity="0.06" />
+    <rect x="40" y="40" width="440" height="220" rx="12" fill="#fff" opacity="0.08" />
+    <rect x="40" y="280" width="440" height="160" rx="12" fill="#fff" opacity="0.06" />
+    <circle cx="880" cy="260" r="180" fill="#fff" opacity="0.06" />
+    <g transform="translate(120,120)">
+      <rect width="360" height="120" rx="8" fill="#fff" opacity="0.14" />
+      <text x="24" y="70" font-family="Inter, Arial, sans-serif" font-size="36" fill="white" opacity="0.98">Repurpose Sermons</text>
+    </g>
+  </g>
+</svg>

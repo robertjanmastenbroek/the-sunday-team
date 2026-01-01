@@ -1067,7 +1067,7 @@ const Blog = ({ onSelectBlogPost }) => {
       author: "Robert-Jan Mastenbroek",
       readTime: "7 min",
       category: "Strategy",
-      image: "https://images.unsplash.com/photo-1509099836639-18ba71f5bacc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      image: "/blog-1.svg"
     },
     {
       id: 2,
@@ -1076,7 +1076,7 @@ const Blog = ({ onSelectBlogPost }) => {
       author: "Roderick Mastenbroek",
       readTime: "8 min",
       category: "Growth",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      image: "/blog-2.svg"
     },
     {
       id: 3,
@@ -1085,7 +1085,7 @@ const Blog = ({ onSelectBlogPost }) => {
       author: "Robert-Jan Mastenbroek",
       readTime: "6 min",
       category: "Strategy",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      image: "/blog-3.svg"
     }
   ];
 
