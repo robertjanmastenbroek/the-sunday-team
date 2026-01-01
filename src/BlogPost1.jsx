@@ -42,7 +42,12 @@ export default function BlogPost1({ onBack }) {
               <button onClick={copyToClipboard} className="p-2 hover:bg-white rounded-lg transition">
                 {copied ? <Check size={18} className="text-green-600" /> : <Copy size={18} />}
               </button>
-              <a href="#" className="p-2 hover:bg-white rounded-lg transition">
+              <a
+                href="https://wa.me/31681150445?text=Hi%21%20I%20want%20to%20learn%20more%20about%20repurposing%20my%20sermons%20into%20videos."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 hover:bg-white rounded-lg transition"
+              >
                 <Share2 size={18} />
               </a>
             </div>
@@ -130,9 +135,9 @@ export default function BlogPost1({ onBack }) {
           <p className="text-gray-700 leading-relaxed mb-6">
             When we started this process with Tenerife Family Church in October, they had a powerful message but zero digital reach. By applying this framework:
           </p>
-          <ul className="list-disc list-inside text-gray-700 space-y-3 mb-8">
+            <ul className="list-disc list-inside text-gray-700 space-y-3 mb-8">
             <li><strong>406K+ total views</strong> across all platforms since Oct 21</li>
-            <li><strong>459 new followers</strong> (194 YouTube, 132 Instagram, 105 TikTok, 28 Facebook)</li>
+            <li><strong>+459 new followers</strong></li>
             <li><strong>Exponential growth</strong> that continues to compound</li>
           </ul>
 

@@ -42,7 +42,12 @@ export default function BlogPost3({ onBack }) {
               <button onClick={copyToClipboard} className="p-2 hover:bg-white rounded-lg transition">
                 {copied ? <Check size={18} className="text-green-600" /> : <Copy size={18} />}
               </button>
-              <a href="#" className="p-2 hover:bg-white rounded-lg transition">
+              <a
+                href="https://wa.me/31681150445?text=Hi%21%20I%20want%20to%20reach%20Gen%20Z%20on%20TikTok."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 hover:bg-white rounded-lg transition"
+              >
                 <Share2 size={18} />
               </a>
             </div>
