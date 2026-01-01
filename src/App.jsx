@@ -89,6 +89,9 @@ const ContactModal = ({ isOpen, onClose }) => {
     onClose();
   };
 
+  const whatsappPhone = "+31681150445";
+  const whatsappMessage = encodeURIComponent("Hi! I'd like to learn more about The Sunday Team and see if we're a good fit for our church.");
+
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
       <div 
@@ -105,45 +108,74 @@ const ContactModal = ({ isOpen, onClose }) => {
           </button>
         </div>
         
-        <form onSubmit={handleSubmit} className="p-8 space-y-5">
+        <div className="p-8 space-y-6">
+          {/* WhatsApp Option - Primary (Low Friction) */}
           <div>
-            <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Your Name</label>
-            <input 
-              required
-              type="text" 
-              className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition focus:bg-white"
-              placeholder="e.g. Pastor John Doe"
-              value={formData.name}
-              onChange={(e) => setFormData({...formData, name: e.target.value})}
-            />
+            <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Fastest Way to Connect</p>
+            <a
+              href={`https://wa.me/${whatsappPhone.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl hover:from-green-600 hover:to-green-700 transition flex items-center justify-center gap-3 shadow-lg hover:shadow-green-500/30 transform hover:-translate-y-0.5"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.929 1.23c-1.367.7-2.607 1.676-3.599 2.86-.992 1.184-1.77 2.562-2.25 4.04-.48 1.479-.72 3.021-.72 4.587 0 4.838 3.944 8.781 8.781 8.781 1.566 0 3.108-.24 4.587-.72 1.479-.48 2.857-1.258 4.04-2.25 1.184-.992 2.16-2.232 2.86-3.599.79-1.366 1.23-2.821 1.23-4.429 0-4.837-3.944-8.781-8.781-8.781z"/>
+              </svg>
+              Chat on WhatsApp
+            </a>
+            <p className="text-xs text-gray-500 mt-2 text-center">Direct message, no call required</p>
           </div>
-          <div>
-            <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Church Name</label>
-            <input 
-              required
-              type="text" 
-              className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition focus:bg-white"
-              placeholder="e.g. Grace Community Church"
-              value={formData.church}
-              onChange={(e) => setFormData({...formData, church: e.target.value})}
-            />
+
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-200"></div>
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="px-2 bg-white text-gray-500 font-bold">Or use form</span>
+            </div>
           </div>
-          <div>
-            <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">How can we serve you?</label>
-            <textarea 
-              required
-              rows={4}
-              className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition resize-none focus:bg-white"
-              placeholder="I'm interested in The Growth plan..."
-              value={formData.message}
-              onChange={(e) => setFormData({...formData, message: e.target.value})}
-            />
-          </div>
-          
-          <button type="submit" className="w-full py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white font-bold rounded-xl hover:from-gray-800 hover:to-gray-700 transition flex items-center justify-center gap-2 shadow-xl hover:shadow-gray-900/20 transform hover:-translate-y-0.5">
-            <Send size={18} /> Send Inquiry
-          </button>
-        </form>
+
+          {/* Email Form - Secondary */}
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Your Name</label>
+              <input 
+                required
+                type="text" 
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition focus:bg-white"
+                placeholder="e.g. Pastor John Doe"
+                value={formData.name}
+                onChange={(e) => setFormData({...formData, name: e.target.value})}
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Church Name</label>
+              <input 
+                required
+                type="text" 
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition focus:bg-white"
+                placeholder="e.g. Grace Community Church"
+                value={formData.church}
+                onChange={(e) => setFormData({...formData, church: e.target.value})}
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">How can we serve you?</label>
+              <textarea 
+                required
+                rows={4}
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition resize-none focus:bg-white"
+                placeholder="I'm interested in The Growth plan..."
+                value={formData.message}
+                onChange={(e) => setFormData({...formData, message: e.target.value})}
+              />
+            </div>
+            
+            <button type="submit" className="w-full py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white font-bold rounded-xl hover:from-gray-800 hover:to-gray-700 transition flex items-center justify-center gap-2 shadow-xl hover:shadow-gray-900/20 transform hover:-translate-y-0.5">
+              <Send size={18} /> Send Inquiry
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
@@ -284,19 +316,24 @@ const Hero = () => (
         >
           View Ministry Plans <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
         </button>
-        <button className="w-full sm:w-auto px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-700 border border-gray-200 text-lg font-bold rounded-full hover:bg-white transition flex items-center justify-center gap-3 hover:border-gray-300 hover:shadow-lg">
-          <Play size={18} fill="currentColor" /> See Examples
-        </button>
       </div>
       
-      {/* Social Proof */}
-      <div className="mt-12 flex items-center justify-center gap-3 text-sm text-gray-500 font-medium animate-fade-in-up delay-500 opacity-80">
-         <div className="flex -space-x-2">
-             <div className="w-8 h-8 rounded-full bg-gray-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-gray-400">?</div>
-             <div className="w-8 h-8 rounded-full bg-gray-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-gray-400">?</div>
-             <div className="w-8 h-8 rounded-full bg-gray-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-gray-400">?</div>
+      {/* Trust Signals */}
+      <div className="mt-16 flex flex-col sm:flex-row gap-8 justify-center items-center animate-fade-in-up delay-500">
+        <div className="text-center">
+          <p className="text-4xl font-extrabold text-gray-900">3</p>
+          <p className="text-sm text-gray-600 font-semibold mt-2">Churches Partnered</p>
         </div>
-        <span className="tracking-wide">Accepting Limited Partners for 2026</span>
+        <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
+        <div className="text-center">
+          <p className="text-4xl font-extrabold text-gray-900">100%</p>
+          <p className="text-sm text-gray-600 font-semibold mt-2">Approval Rate</p>
+        </div>
+        <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
+        <div className="text-center">
+          <p className="text-4xl font-extrabold text-gray-900">150K+</p>
+          <p className="text-sm text-gray-600 font-semibold mt-2">Total Views Delivered</p>
+        </div>
       </div>
     </div>
   </section>
@@ -792,11 +829,277 @@ const Pricing = () => {
           ))}
         </div>
 
-        <div className="mt-20 text-center">
+        <div className="mt-20 space-y-8">
+          {/* Main Guarantee */}
+          <div className="text-center">
             <div className="inline-flex items-center gap-3 bg-white/50 backdrop-blur px-6 py-3 rounded-2xl text-indigo-900 text-sm font-semibold border border-indigo-100 shadow-sm">
                 <ShieldCheck size={18} className="text-indigo-600"/> 
                 <span><strong>14-Day "Good Steward" Guarantee:</strong> Love our work or get a full refund.</span>
             </div>
+          </div>
+
+          {/* Objection Handlers */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200">
+              <CheckCircle className="text-green-600 mb-3" size={24} />
+              <h4 className="font-bold text-gray-900 mb-2">No Long Contracts</h4>
+              <p className="text-sm text-gray-600">Month-to-month. Cancel anytime. We earn your trust every month.</p>
+            </div>
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-200">
+              <CheckCircle className="text-blue-600 mb-3" size={24} />
+              <h4 className="font-bold text-gray-900 mb-2">Dedicated Support Included</h4>
+              <p className="text-sm text-gray-600">Direct app chat with Robert-Jan & Roderick. No waiting in queues.</p>
+            </div>
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-200">
+              <CheckCircle className="text-purple-600 mb-3" size={24} />
+              <h4 className="font-bold text-gray-900 mb-2">Theological Review Guaranteed</h4>
+              <p className="text-sm text-gray-600">Every edit is hand-verified by Roderick. Truth before trends.</p>
+            </div>
+            <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 border border-orange-200">
+              <CheckCircle className="text-orange-600 mb-3" size={24} />
+              <h4 className="font-bold text-gray-900 mb-2">You Own Your Content</h4>
+              <p className="text-sm text-gray-600">All videos, clips, and thumbnails are 100% yours to use forever.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// --- FAQ SECTION ---
+
+const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+  
+  const faqs = [
+    {
+      question: "Can I cancel anytime?",
+      answer: "Yes! We believe in month-to-month flexibility. Cancel anytime with no penalties. No long-term contracts. If you're not seeing the results you want, we want to part on good terms."
+    },
+    {
+      question: "What if I don't like the edits?",
+      answer: "We offer a 14-day money-back guarantee. If you're unsatisfied with the quality or theological accuracy of our work within the first 14 days, we'll refund you fully. We're confident in our work, but we want you to feel zero risk."
+    },
+    {
+      question: "Do you handle posting or do we?",
+      answer: "We handle it! All plans include auto-posting to YouTube, Instagram, Facebook, and TikTok. You approve the clips through our app, and we schedule them for optimal posting times. One less thing for you to worry about."
+    },
+    {
+      question: "What's your typical turnaround time?",
+      answer: "We aim for 3-5 business days from when you submit your sermon recording. Growth and Harvest tiers get priority processing. Time is precious in ministry—we respect that."
+    },
+    {
+      question: "Can I upgrade or downgrade my plan?",
+      answer: "Absolutely. Switch plans anytime with no penalty. Going from Seed to Growth? Great. Downgrading temporarily? No problem. We want the plan to match your current needs."
+    },
+    {
+      question: "How do I submit my sermons?",
+      answer: "Through our Ministry Portal App (powered by GoHighLevel). Upload your sermon recording, and our team gets notified. You can track status, approve clips, and communicate with Robert-Jan and Roderick directly from the app."
+    },
+    {
+      question: "What if I have multiple sermon series?",
+      answer: "Perfect! Our plans are based on weekly sermon count, not series. If you preach multiple series, we can customize your plan. Message us directly at +31681150445 on WhatsApp or via our contact form."
+    }
+  ];
+
+  return (
+    <section id="faq" className="py-32 bg-gray-50 relative">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">Frequently Asked Questions</h2>
+          <p className="text-lg text-gray-600 font-light">Everything you need to know. Can't find the answer? Message us on WhatsApp.</p>
+        </div>
+
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <div 
+              key={index}
+              className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300"
+            >
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full px-8 py-6 flex items-center justify-between hover:bg-gray-50 transition-colors text-left group"
+              >
+                <span className="font-bold text-gray-900 text-lg pr-4">{faq.question}</span>
+                <div className={`shrink-0 w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+              </button>
+              
+              {openIndex === index && (
+                <div className="px-8 pb-6 border-t border-gray-100 bg-gray-50/50 animate-fade-in-up">
+                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 bg-indigo-50 border border-indigo-200 rounded-2xl p-8 text-center">
+          <p className="text-gray-900 font-semibold mb-4">Still have questions?</p>
+          <a 
+            href="https://wa.me/31681150445?text=Hi%21%20I%20have%20a%20question%20about%20The%20Sunday%20Team"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.929 1.23c-1.367.7-2.607 1.676-3.599 2.86-.992 1.184-1.77 2.562-2.25 4.04-.48 1.479-.72 3.021-.72 4.587 0 4.838 3.944 8.781 8.781 8.781 1.566 0 3.108-.24 4.587-.72 1.479-.48 2.857-1.258 4.04-2.25 1.184-.992 2.16-2.232 2.86-3.599.79-1.366 1.23-2.821 1.23-4.429 0-4.837-3.944-8.781-8.781-8.781z"/>
+            </svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// --- PRICING CALCULATOR ---
+
+const PricingCalculator = () => {
+  const [sermons, setSermons] = useState(1);
+  
+  const getRecommendation = () => {
+    if (sermons === 1) {
+      return {
+        plan: "The Seed",
+        price: "$497",
+        reason: "Perfect for single sermon weekly. 12 short-form videos + theological review."
+      };
+    } else if (sermons <= 3) {
+      return {
+        plan: "The Growth",
+        price: "$997",
+        reason: "Ideal for 2-3 weekly sermons. Daily posting + 4 full sermon edits + dedicated support."
+      };
+    } else {
+      return {
+        plan: "The Harvest",
+        price: "$2,497",
+        reason: "Best for high-volume ministries. Everything in Growth + dedicated editor + strategy calls."
+      };
+    }
+  };
+
+  const rec = getRecommendation();
+
+  return (
+    <section className="py-20 bg-white border-b border-gray-100 relative">
+      <div className="max-w-2xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl font-bold text-gray-900 mb-3 tracking-tight">Find Your Perfect Plan</h3>
+          <p className="text-gray-600 font-light">How many sermons do you preach per week?</p>
+        </div>
+
+        <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-8 border border-indigo-100">
+          <div className="mb-8">
+            <input 
+              type="range" 
+              min="1" 
+              max="7" 
+              value={sermons}
+              onChange={(e) => setSermons(parseInt(e.target.value))}
+              className="w-full h-3 bg-indigo-200 rounded-full appearance-none cursor-pointer accent-indigo-600"
+            />
+            <div className="flex justify-between text-xs text-gray-600 font-semibold mt-3 px-2">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <span>5</span>
+              <span>6</span>
+              <span>7+</span>
+            </div>
+          </div>
+
+          <div className="text-center mb-2">
+            <p className="text-sm text-gray-600 font-semibold">You're preaching</p>
+            <p className="text-5xl font-extrabold text-gray-900 mt-1">{sermons}</p>
+            <p className="text-sm text-gray-600 font-semibold">sermon{sermons !== 1 ? 's' : ''} per week</p>
+          </div>
+
+          <div className="mt-8 bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <p className="text-xs text-indigo-600 font-bold uppercase tracking-wider mb-2">Recommended for you</p>
+            <h4 className="text-2xl font-bold text-gray-900 mb-1">{rec.plan}</h4>
+            <p className="text-sm text-gray-600 mb-4">{rec.reason}</p>
+            <p className="text-3xl font-extrabold text-gray-900 mb-4">{rec.price}<span className="text-lg text-gray-500 font-normal">/month</span></p>
+            <button 
+              onClick={() => document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' })}
+              className="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-xl hover:shadow-lg transition"
+            >
+              See Full Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// --- BLOG SECTION ---
+
+const Blog = () => {
+  const posts = [
+    {
+      title: "How to Repurpose Your Weekly Sermon Into 5 Daily Videos",
+      excerpt: "Stop preaching to empty chairs. Learn the framework that's helped 150K+ people discover your message in 30 days.",
+      author: "Robert-Jan Mastenbroek",
+      readTime: "7 min",
+      category: "Strategy"
+    },
+    {
+      title: "Why Your Church's YouTube Channel is Failing (And How to Fix It)",
+      excerpt: "Most pastoral YouTube channels get 50 views per video. Here's the algorithm-approved system we use with every client.",
+      author: "Roderick Mastenbroek",
+      readTime: "8 min",
+      category: "Growth"
+    },
+    {
+      title: "TikTok for Pastors: Reaching Gen Z Without Being Cringe",
+      excerpt: "Your next generation congregation is on TikTok. Here's how to preach the Gospel authentically on short-form video.",
+      author: "Robert-Jan Mastenbroek",
+      readTime: "6 min",
+      category: "Strategy"
+    }
+  ];
+
+  return (
+    <section className="py-32 bg-white relative">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">Resources for Growing Your Digital Ministry</h2>
+          <p className="text-lg text-gray-600 font-light">Free strategies from our team</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {posts.map((post, i) => (
+            <article 
+              key={i}
+              className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col group cursor-pointer"
+            >
+              <div className="h-48 bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center">
+                <div className="text-6xl">📱</div>
+              </div>
+              
+              <div className="p-6 flex flex-col flex-1">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider bg-indigo-50 px-3 py-1 rounded-full">{post.category}</span>
+                  <span className="text-xs text-gray-500 font-semibold">{post.readTime} read</span>
+                </div>
+                
+                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition leading-snug flex-1">{post.title}</h3>
+                <p className="text-sm text-gray-600 mb-6 leading-relaxed">{post.excerpt}</p>
+                
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <p className="text-xs text-gray-500 font-semibold">{post.author}</p>
+                  <ArrowRight size={16} className="text-indigo-600 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -856,6 +1159,9 @@ export default function App() {
         <TeamSection />
         <AppFeature />
         <Pricing />
+        <PricingCalculator />
+        <FAQ />
+        <Blog />
       </main>
       <Footer 
         onOpenPrivacy={() => setShowPrivacy(true)} 
