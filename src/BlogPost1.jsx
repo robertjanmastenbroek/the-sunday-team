@@ -53,7 +53,7 @@ export default function BlogPost1({ onBack }) {
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-16">
         <img 
-          src="/blog-1.png"
+          src="/blog-1.jpg"
           alt="Video creation"
           className="w-full rounded-2xl shadow-lg mb-12 h-96 object-cover"
         />

@@ -1067,7 +1067,7 @@ const Blog = ({ onSelectBlogPost }) => {
       author: "Robert-Jan Mastenbroek",
       readTime: "7 min",
       category: "Strategy",
-      image: "/blog-1.png"
+      image: "/blog-1.jpg"
     },
     {
       id: 2,
@@ -1076,7 +1076,7 @@ const Blog = ({ onSelectBlogPost }) => {
       author: "Robert-Jan Mastenbroek",
       readTime: "8 min",
       category: "Growth",
-      image: "/blog-2.png"
+      image: "/blog-2.jpg"
     },
     {
       id: 3,
@@ -1085,7 +1085,7 @@ const Blog = ({ onSelectBlogPost }) => {
       author: "Robert-Jan Mastenbroek",
       readTime: "6 min",
       category: "Strategy",
-      image: "/blog-3.png"
+      image: "/blog-3.jpg"
     }
   ];
 
