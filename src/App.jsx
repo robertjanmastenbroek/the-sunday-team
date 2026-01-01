@@ -1067,16 +1067,16 @@ const Blog = ({ onSelectBlogPost }) => {
       author: "Robert-Jan Mastenbroek",
       readTime: "7 min",
       category: "Strategy",
-      image: "/blog-1.svg"
+      image: "/blog-1.png"
     },
     {
       id: 2,
       title: "Why Your Church's YouTube Channel is Failing (And How to Fix It)",
       excerpt: "Most pastoral YouTube channels get 50 views per video. Here's the algorithm-approved system we use with every client.",
-      author: "Roderick Mastenbroek",
+      author: "Robert-Jan Mastenbroek",
       readTime: "8 min",
       category: "Growth",
-      image: "/blog-2.svg"
+      image: "/blog-2.png"
     },
     {
       id: 3,
@@ -1085,7 +1085,7 @@ const Blog = ({ onSelectBlogPost }) => {
       author: "Robert-Jan Mastenbroek",
       readTime: "6 min",
       category: "Strategy",
-      image: "/blog-3.svg"
+      image: "/blog-3.png"
     }
   ];
 

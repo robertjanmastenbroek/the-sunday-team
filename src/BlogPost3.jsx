@@ -53,7 +53,7 @@ export default function BlogPost3({ onBack }) {
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-16">
         <img 
-          src="/blog-3.svg"
+          src="/blog-3.png"
           alt="TikTok marketing"
           className="w-full rounded-2xl shadow-lg mb-12 h-96 object-cover"
         />
