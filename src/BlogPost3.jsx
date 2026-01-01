@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowLeft, Share2, Copy, Check } from 'lucide-react';
-import { useState } from 'react';
 
 export default function BlogPost3({ onBack }) {
   const [copied, setCopied] = useState(false);
@@ -10,6 +9,10 @@ export default function BlogPost3({ onBack }) {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -50,7 +53,7 @@ export default function BlogPost3({ onBack }) {
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-16">
         <img 
-          src="https://images.unsplash.com/photo-1611339555312-e607c90352fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
           alt="TikTok marketing"
           className="w-full rounded-2xl shadow-lg mb-12 h-96 object-cover"
         />
