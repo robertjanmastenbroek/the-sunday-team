@@ -729,7 +729,7 @@ const Pricing = () => (
               "Distribution to YT, IG, FB & TikTok",
               "Viral Hooks & Descriptions Written",
               "Access to Ministry Portal App",
-              "Monthly Stewardship Report"
+              "Monthly Analytics Report"
             ].map((feature, i) => (
               <li key={i} className="flex items-start">
                 <div className="flex-shrink-0 w-6">
@@ -759,7 +759,7 @@ const Pricing = () => (
             >
               Book Strategy Call <ArrowRight className="ml-2" size={20}/>
             </button>
-            <p className="mt-4 text-xs text-gray-400">Limited spots available for Q1 2025</p>
+            <p className="mt-4 text-xs text-gray-400">Limited spots available for 2026</p>
           </div>
         </div>
       </div>
