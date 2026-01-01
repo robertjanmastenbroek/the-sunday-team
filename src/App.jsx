@@ -232,12 +232,14 @@ const Navbar = () => {
           <a href="#process" className="hover:text-gray-900 transition duration-300">Method</a>
           <a href="#team" className="hover:text-gray-900 transition duration-300">Team</a>
           <a href="#pricing" className="hover:text-gray-900 transition duration-300">Pricing</a>
-          <button 
-            onClick={() => window.open('https://calendly.com/', '_blank')} 
+          <a 
+            href="https://wa.me/31681150445?text=Hi%21%20I'd%20like%20to%20schedule%20a%20clarity%20call%20with%20The%20Sunday%20Team." 
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-2.5 bg-gray-900 text-white text-sm font-bold rounded-full hover:bg-gray-800 transition shadow-lg shadow-gray-900/20 transform hover:-translate-y-0.5"
           >
             Book Clarity Call
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -253,12 +255,14 @@ const Navbar = () => {
           <a href="#process" className="text-xl font-bold text-gray-800" onClick={() => setIsOpen(false)}>Method</a>
           <a href="#team" className="text-xl font-bold text-gray-800" onClick={() => setIsOpen(false)}>Team</a>
           <a href="#pricing" className="text-xl font-bold text-gray-800" onClick={() => setIsOpen(false)}>Pricing</a>
-          <button 
-            onClick={() => window.open('https://calendly.com/', '_blank')} 
-            className="w-full py-4 bg-gray-900 text-white text-lg font-bold rounded-xl shadow-lg active:scale-95 transition"
+          <a 
+            href="https://wa.me/31681150445?text=Hi%21%20I'd%20like%20to%20schedule%20a%20clarity%20call%20with%20The%20Sunday%20Team." 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-4 bg-gray-900 text-white text-lg font-bold rounded-xl shadow-lg active:scale-95 transition text-center block"
           >
             Book Clarity Call
-          </button>
+          </a>
         </div>
       )}
     </nav>
@@ -366,17 +370,17 @@ const SocialProof = () => (
               </div>
               <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-tight tracking-tight">Tenerife Family Church</h3>
               <p className="text-indigo-100/80 text-lg leading-relaxed mb-10 max-w-md font-light">
-                TFC had a powerful message but limited reach. Within the first month of partnering with us, their digital impact exploded.
+                TFC partnered with us on October 21st with a powerful message but limited digital reach. Since then, their Kingdom impact has exploded across all platforms.
               </p>
               
               <div className="grid grid-cols-2 gap-8 border-t border-white/10 pt-8">
                 <div>
-                   <p className="text-5xl font-extrabold text-white mb-2 tracking-tighter">150K+</p>
+                   <p className="text-5xl font-extrabold text-white mb-2 tracking-tighter">406K+</p>
                    <p className="text-indigo-300 text-xs font-bold uppercase tracking-widest"><TrendingUp size={14} className="inline mr-1 mb-1"/> Total Views</p>
                 </div>
                 <div>
-                   <p className="text-5xl font-extrabold text-white mb-2 tracking-tighter">28</p>
-                   <p className="text-indigo-300 text-xs font-bold uppercase tracking-widest">Days</p>
+                   <p className="text-5xl font-extrabold text-white mb-2 tracking-tighter">459</p>
+                   <p className="text-indigo-300 text-xs font-bold uppercase tracking-widest">New Followers</p>
                 </div>
               </div>
             </div>
@@ -385,24 +389,46 @@ const SocialProof = () => (
             <div className="bg-white/5 backdrop-blur-2xl rounded-[2rem] p-8 border border-white/10 relative shadow-2xl ring-1 ring-white/10">
                <div className="flex justify-between items-center mb-8">
                   <div>
-                    <p className="text-xs text-indigo-200 uppercase tracking-widest font-bold mb-1">Total Views (Last 28 Days)</p>
-                    <p className="text-3xl font-bold text-white tracking-tight">150,300</p>
+                    <p className="text-xs text-indigo-200 uppercase tracking-widest font-bold mb-1">Total Reach Since Oct 21</p>
+                    <p className="text-3xl font-bold text-white tracking-tight">406,499 Views</p>
                   </div>
                   <div className="bg-green-500/20 text-green-400 px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1 border border-green-500/30 shadow-[0_0_15px_rgba(74,222,128,0.2)]">
-                    <TrendingUp size={14} /> +999%
+                    <TrendingUp size={14} /> Exponential
                   </div>
                </div>
                
-               {/* Platform Breakdown Bars */}
+               {/* Platform Breakdown */}
                <div className="space-y-6">
                   {/* YouTube */}
                   <div>
                     <div className="flex justify-between text-xs mb-2">
-                        <span className="text-gray-300 flex items-center gap-2 font-semibold"><Youtube size={14}/> YouTube Shorts</span>
-                        <span className="font-bold text-white">61.0K</span>
+                        <span className="text-gray-300 flex items-center gap-2 font-semibold"><Youtube size={14}/> YouTube</span>
+                        <span className="font-bold text-white">170.2K views • 194 subscribers</span>
                     </div>
                     <div className="w-full bg-gray-700/30 rounded-full h-2 overflow-hidden backdrop-blur-sm">
-                        <div className="bg-gradient-to-r from-red-600 to-red-500 h-2 rounded-full shadow-[0_0_15px_rgba(239,68,68,0.4)] w-[65%]"></div>
+                        <div className="bg-gradient-to-r from-red-600 to-red-500 h-2 rounded-full shadow-[0_0_15px_rgba(239,68,68,0.4)] w-[42%]"></div>
+                    </div>
+                  </div>
+
+                  {/* Facebook */}
+                  <div>
+                    <div className="flex justify-between text-xs mb-2">
+                        <span className="text-gray-300 flex items-center gap-2 font-semibold"><Facebook size={14}/> Facebook</span>
+                        <span className="font-bold text-white">115.2K views • 28 followers</span>
+                    </div>
+                    <div className="w-full bg-gray-700/30 rounded-full h-2 overflow-hidden backdrop-blur-sm">
+                        <div className="bg-gradient-to-r from-blue-600 to-blue-500 h-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.4)] w-[28%]"></div>
+                    </div>
+                  </div>
+
+                   {/* Instagram */}
+                   <div>
+                    <div className="flex justify-between text-xs mb-2">
+                        <span className="text-gray-300 flex items-center gap-2 font-semibold"><Instagram size={14}/> Instagram</span>
+                        <span className="font-bold text-white">47.2K views • 132 followers</span>
+                    </div>
+                    <div className="w-full bg-gray-700/30 rounded-full h-2 overflow-hidden backdrop-blur-sm">
+                        <div className="bg-gradient-to-r from-pink-600 to-pink-500 h-2 rounded-full shadow-[0_0_15px_rgba(236,72,153,0.4)] w-[12%]"></div>
                     </div>
                   </div>
 
@@ -410,32 +436,10 @@ const SocialProof = () => (
                   <div>
                     <div className="flex justify-between text-xs mb-2">
                         <span className="text-gray-300 flex items-center gap-2 font-semibold">TikTok</span>
-                        <span className="font-bold text-white">34.0K</span>
+                        <span className="font-bold text-white">74K views • 105 followers</span>
                     </div>
                     <div className="w-full bg-gray-700/30 rounded-full h-2 overflow-hidden backdrop-blur-sm">
-                        <div className="bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full shadow-[0_0_15px_rgba(34,211,238,0.4)] w-[45%]"></div>
-                    </div>
-                  </div>
-
-                  {/* Facebook */}
-                  <div>
-                    <div className="flex justify-between text-xs mb-2">
-                        <span className="text-gray-300 flex items-center gap-2 font-semibold"><Facebook size={14}/> Facebook Reels</span>
-                        <span className="font-bold text-white">28.0K</span>
-                    </div>
-                    <div className="w-full bg-gray-700/30 rounded-full h-2 overflow-hidden backdrop-blur-sm">
-                        <div className="bg-gradient-to-r from-blue-600 to-blue-500 h-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.4)] w-[38%]"></div>
-                    </div>
-                  </div>
-
-                   {/* Instagram */}
-                   <div>
-                    <div className="flex justify-between text-xs mb-2">
-                        <span className="text-gray-300 flex items-center gap-2 font-semibold"><Instagram size={14}/> Instagram Reels</span>
-                        <span className="font-bold text-white">27.3K</span>
-                    </div>
-                    <div className="w-full bg-gray-700/30 rounded-full h-2 overflow-hidden backdrop-blur-sm">
-                        <div className="bg-gradient-to-r from-pink-600 to-pink-500 h-2 rounded-full shadow-[0_0_15px_rgba(236,72,153,0.4)] w-[36%]"></div>
+                        <div className="bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full shadow-[0_0_15px_rgba(34,211,238,0.4)] w-[18%]"></div>
                     </div>
                   </div>
                </div>
@@ -960,26 +964,26 @@ const FAQ = () => {
 // --- PRICING CALCULATOR ---
 
 const PricingCalculator = () => {
-  const [sermons, setSermons] = useState(1);
+  const [monthlyViews, setMonthlyViews] = useState(30);
   
   const getRecommendation = () => {
-    if (sermons === 1) {
+    if (monthlyViews <= 20) {
       return {
         plan: "The Seed",
         price: "$497",
-        reason: "Perfect for single sermon weekly. 12 short-form videos + theological review."
+        reason: "Perfect for building your foundation. 12 short-form videos + theological review."
       };
-    } else if (sermons <= 3) {
+    } else if (monthlyViews <= 75) {
       return {
         plan: "The Growth",
         price: "$997",
-        reason: "Ideal for 2-3 weekly sermons. Daily posting + 4 full sermon edits + dedicated support."
+        reason: "The '150K Reach' System. Daily videos + 4 full edits + dedicated support."
       };
     } else {
       return {
         plan: "The Harvest",
         price: "$2,497",
-        reason: "Best for high-volume ministries. Everything in Growth + dedicated editor + strategy calls."
+        reason: "Complete partnership. Everything in Growth + dedicated editor + strategy calls."
       };
     }
   };
@@ -991,34 +995,32 @@ const PricingCalculator = () => {
       <div className="max-w-2xl mx-auto px-6">
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900 mb-3 tracking-tight">Find Your Perfect Plan</h3>
-          <p className="text-gray-600 font-light">How many sermons do you preach per week?</p>
+          <p className="text-gray-600 font-light">What's your monthly reach goal?</p>
         </div>
 
         <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-8 border border-indigo-100">
           <div className="mb-8">
             <input 
               type="range" 
-              min="1" 
-              max="7" 
-              value={sermons}
-              onChange={(e) => setSermons(parseInt(e.target.value))}
+              min="5" 
+              max="150" 
+              value={monthlyViews}
+              onChange={(e) => setMonthlyViews(parseInt(e.target.value))}
               className="w-full h-3 bg-indigo-200 rounded-full appearance-none cursor-pointer accent-indigo-600"
             />
             <div className="flex justify-between text-xs text-gray-600 font-semibold mt-3 px-2">
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
-              <span>4</span>
-              <span>5</span>
-              <span>6</span>
-              <span>7+</span>
+              <span>5K</span>
+              <span>30K</span>
+              <span>60K</span>
+              <span>90K</span>
+              <span>150K+</span>
             </div>
           </div>
 
           <div className="text-center mb-2">
-            <p className="text-sm text-gray-600 font-semibold">You're preaching</p>
-            <p className="text-5xl font-extrabold text-gray-900 mt-1">{sermons}</p>
-            <p className="text-sm text-gray-600 font-semibold">sermon{sermons !== 1 ? 's' : ''} per week</p>
+            <p className="text-sm text-gray-600 font-semibold">Your monthly reach goal</p>
+            <p className="text-5xl font-extrabold text-gray-900 mt-1">{monthlyViews}K</p>
+            <p className="text-sm text-gray-600 font-semibold">views per month</p>
           </div>
 
           <div className="mt-8 bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
@@ -1048,21 +1050,27 @@ const Blog = () => {
       excerpt: "Stop preaching to empty chairs. Learn the framework that's helped 150K+ people discover your message in 30 days.",
       author: "Robert-Jan Mastenbroek",
       readTime: "7 min",
-      category: "Strategy"
+      category: "Strategy",
+      image: "https://images.unsplash.com/photo-1516738901601-6e0ee0b8ec66?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      link: "#"
     },
     {
       title: "Why Your Church's YouTube Channel is Failing (And How to Fix It)",
       excerpt: "Most pastoral YouTube channels get 50 views per video. Here's the algorithm-approved system we use with every client.",
       author: "Roderick Mastenbroek",
       readTime: "8 min",
-      category: "Growth"
+      category: "Growth",
+      image: "https://images.unsplash.com/photo-1611339555312-e607c90352fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      link: "#"
     },
     {
       title: "TikTok for Pastors: Reaching Gen Z Without Being Cringe",
       excerpt: "Your next generation congregation is on TikTok. Here's how to preach the Gospel authentically on short-form video.",
       author: "Robert-Jan Mastenbroek",
       readTime: "6 min",
-      category: "Strategy"
+      category: "Strategy",
+      image: "https://images.unsplash.com/photo-1611262588024-d12430b98920?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      link: "#"
     }
   ];
 
@@ -1076,12 +1084,19 @@ const Blog = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {posts.map((post, i) => (
-            <article 
+            <a 
               key={i}
+              href={post.link}
               className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col group cursor-pointer"
             >
-              <div className="h-48 bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center">
-                <div className="text-6xl">📱</div>
+              {/* Image Container */}
+              <div className="h-48 bg-gray-200 overflow-hidden relative">
+                <img 
+                  src={post.image} 
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
               </div>
               
               <div className="p-6 flex flex-col flex-1">
@@ -1098,7 +1113,7 @@ const Blog = () => {
                   <ArrowRight size={16} className="text-indigo-600 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>
