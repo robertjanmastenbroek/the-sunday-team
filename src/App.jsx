@@ -31,6 +31,9 @@ import {
   Download,
   Sparkles
 } from 'lucide-react';
+import BlogPost1 from './BlogPost1';
+import BlogPost2 from './BlogPost2';
+import BlogPost3 from './BlogPost3';
 
 // --- LEGAL MODALS ---
 
@@ -1055,34 +1058,34 @@ const PricingCalculator = () => {
 
 // --- BLOG SECTION ---
 
-const Blog = () => {
+const Blog = ({ onSelectBlogPost }) => {
   const posts = [
     {
+      id: 1,
       title: "How to Repurpose Your Weekly Sermon Into 5 Daily Videos",
       excerpt: "Stop preaching to empty chairs. Learn the framework that's helped 150K+ people discover your message in 30 days.",
       author: "Robert-Jan Mastenbroek",
       readTime: "7 min",
       category: "Strategy",
-      image: "https://images.unsplash.com/photo-1633356122544-f134ef2944f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      link: "/blog/repurpose-sermon-videos"
+      image: "https://images.unsplash.com/photo-1633356122544-f134ef2944f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     },
     {
+      id: 2,
       title: "Why Your Church's YouTube Channel is Failing (And How to Fix It)",
       excerpt: "Most pastoral YouTube channels get 50 views per video. Here's the algorithm-approved system we use with every client.",
       author: "Roderick Mastenbroek",
       readTime: "8 min",
       category: "Growth",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      link: "/blog/youtube-channel-growth"
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     },
     {
+      id: 3,
       title: "TikTok for Pastors: Reaching Gen Z Without Being Cringe",
       excerpt: "Your next generation congregation is on TikTok. Here's how to preach the Gospel authentically on short-form video.",
       author: "Robert-Jan Mastenbroek",
       readTime: "6 min",
       category: "Strategy",
-      image: "https://images.unsplash.com/photo-1611339555312-e607c90352fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      link: "/blog/tiktok-pastors"
+      image: "https://images.unsplash.com/photo-1611339555312-e607c90352fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     }
   ];
 
@@ -1095,11 +1098,11 @@ const Blog = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {posts.map((post, i) => (
-            <a 
-              key={i}
-              href={post.link}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col group cursor-pointer"
+          {posts.map((post) => (
+            <div 
+              key={post.id}
+              onClick={() => onSelectBlogPost(post.id)}
+              className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col group cursor-pointer relative"
             >
               {/* Image Container */}
               <div className="h-48 bg-gray-200 overflow-hidden relative">
@@ -1125,7 +1128,7 @@ const Blog = () => {
                   <ArrowRight size={16} className="text-indigo-600 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
@@ -1175,6 +1178,18 @@ export default function App() {
   const [showPrivacy, setShowPrivacy] = useState(false);
   const [showTerms, setShowTerms] = useState(false);
   const [showContact, setShowContact] = useState(false);
+  const [selectedBlogPost, setSelectedBlogPost] = useState(null);
+
+  // Render selected blog post
+  if (selectedBlogPost === 1) {
+    return <BlogPost1 onBack={() => setSelectedBlogPost(null)} />;
+  }
+  if (selectedBlogPost === 2) {
+    return <BlogPost2 onBack={() => setSelectedBlogPost(null)} />;
+  }
+  if (selectedBlogPost === 3) {
+    return <BlogPost3 onBack={() => setSelectedBlogPost(null)} />;
+  }
 
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-indigo-500 selection:text-white scroll-smooth antialiased">
@@ -1188,7 +1203,7 @@ export default function App() {
         <Pricing />
         <PricingCalculator />
         <FAQ />
-        <Blog />
+        <Blog onSelectBlogPost={setSelectedBlogPost} />
       </main>
       <Footer 
         onOpenPrivacy={() => setShowPrivacy(true)} 
