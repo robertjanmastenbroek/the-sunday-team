@@ -886,24 +886,36 @@ const FAQ = () => {
       answer: "We offer a 14-day money-back guarantee. If you're unsatisfied with the quality or theological accuracy of our work within the first 14 days, we'll refund you fully. We're confident in our work, but we want you to feel zero risk."
     },
     {
-      question: "Do you handle posting or do we?",
-      answer: "We handle it! All plans include auto-posting to YouTube, Instagram, Facebook, and TikTok. You approve the clips through our app, and we schedule them for optimal posting times. One less thing for you to worry about."
+      question: "Do I have to approve each clip?",
+      answer: "Nope! We fact-check and theologically verify every edit ourselves. Roderick personally ensures accuracy and context. We handle the quality control—you just get Kingdom results."
     },
     {
       question: "What's your typical turnaround time?",
-      answer: "We aim for 3-5 business days from when you submit your sermon recording. Growth and Harvest tiers get priority processing. Time is precious in ministry—we respect that."
+      answer: "We deliver within 48 hours of receiving your source file (YouTube livestream link, etc). Note: YouTube takes 24 hours to make livestreams downloadable, so from livestream end to first clips ready is typically 72 hours."
+    },
+    {
+      question: "How do I submit my sermons?",
+      answer: "You don't need to do anything! Once we have access to your YouTube channel or livestream link, we get to work instantly. No forms. No uploads. We handle sourcing everything ourselves. Just give us channel access and we'll do the rest."
+    },
+    {
+      question: "What platforms do you cover?",
+      answer: "All of them! YouTube, Instagram, TikTok, and Facebook. We create platform-optimized clips for each one—different aspect ratios, lengths, hooks. Everything auto-posts at the best times. We handle the entire distribution."
+    },
+    {
+      question: "Do you create entirely new content or just edit my sermon?",
+      answer: "We edit your sermon. We extract the most powerful clips, add captions, graphics, and theological context. Nothing is created from scratch—we're amplifying what you already preached. Pure distillation of your message."
     },
     {
       question: "Can I upgrade or downgrade my plan?",
       answer: "Absolutely. Switch plans anytime with no penalty. Going from Seed to Growth? Great. Downgrading temporarily? No problem. We want the plan to match your current needs."
     },
     {
-      question: "How do I submit my sermons?",
-      answer: "Through our Ministry Portal App (powered by GoHighLevel). Upload your sermon recording, and our team gets notified. You can track status, approve clips, and communicate with Robert-Jan and Roderick directly from the app."
+      question: "We handle posting—how does that work?",
+      answer: "All plans include auto-posting to YouTube, Instagram, Facebook, and TikTok at optimal times. We schedule everything. You just watch your reach grow. One less thing for your team to think about."
     },
     {
       question: "What if I have multiple sermon series?",
-      answer: "Perfect! Our plans are based on weekly sermon count, not series. If you preach multiple series, we can customize your plan. Message us directly at +31681150445 on WhatsApp or via our contact form."
+      answer: "Perfect! Our plans are based on your reach goals, not sermon count. If you preach multiple series, we scale with you. Message us directly at +31681150445 on WhatsApp to customize."
     }
   ];
 
@@ -967,13 +979,13 @@ const PricingCalculator = () => {
   const [monthlyViews, setMonthlyViews] = useState(30);
   
   const getRecommendation = () => {
-    if (monthlyViews <= 20) {
+    if (monthlyViews <= 40) {
       return {
         plan: "The Seed",
         price: "$497",
         reason: "Perfect for building your foundation. 12 short-form videos + theological review."
       };
-    } else if (monthlyViews <= 75) {
+    } else if (monthlyViews < 120) {
       return {
         plan: "The Growth",
         price: "$997",
@@ -1051,8 +1063,8 @@ const Blog = () => {
       author: "Robert-Jan Mastenbroek",
       readTime: "7 min",
       category: "Strategy",
-      image: "https://images.unsplash.com/photo-1516738901601-6e0ee0b8ec66?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      link: "#"
+      image: "https://images.unsplash.com/photo-1633356122544-f134ef2944f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      link: "/blog/repurpose-sermon-videos"
     },
     {
       title: "Why Your Church's YouTube Channel is Failing (And How to Fix It)",
@@ -1060,8 +1072,8 @@ const Blog = () => {
       author: "Roderick Mastenbroek",
       readTime: "8 min",
       category: "Growth",
-      image: "https://images.unsplash.com/photo-1611339555312-e607c90352fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      link: "#"
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      link: "/blog/youtube-channel-growth"
     },
     {
       title: "TikTok for Pastors: Reaching Gen Z Without Being Cringe",
@@ -1069,8 +1081,8 @@ const Blog = () => {
       author: "Robert-Jan Mastenbroek",
       readTime: "6 min",
       category: "Strategy",
-      image: "https://images.unsplash.com/photo-1611262588024-d12430b98920?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      link: "#"
+      image: "https://images.unsplash.com/photo-1611339555312-e607c90352fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      link: "/blog/tiktok-pastors"
     }
   ];
 
