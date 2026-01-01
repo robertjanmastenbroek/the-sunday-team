@@ -236,12 +236,12 @@ const Navbar = () => {
           <a href="#team" className="hover:text-gray-900 transition duration-300">Team</a>
           <a href="#pricing" className="hover:text-gray-900 transition duration-300">Pricing</a>
           <a 
-            href="https://wa.me/31681150445?text=Hi%21%20I'd%20like%20to%20schedule%20a%20clarity%20call%20with%20The%20Sunday%20Team." 
+            href="https://wa.me/31681150445?text=Hi%21%20I'd%20like%20to%20get%20started%20with%20The%20Sunday%20Team." 
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-2.5 bg-gray-900 text-white text-sm font-bold rounded-full hover:bg-gray-800 transition shadow-lg shadow-gray-900/20 transform hover:-translate-y-0.5"
           >
-            Book Clarity Call
+            Start Your Growth
           </a>
         </div>
 
@@ -259,12 +259,12 @@ const Navbar = () => {
           <a href="#team" className="text-xl font-bold text-gray-800" onClick={() => setIsOpen(false)}>Team</a>
           <a href="#pricing" className="text-xl font-bold text-gray-800" onClick={() => setIsOpen(false)}>Pricing</a>
           <a 
-            href="https://wa.me/31681150445?text=Hi%21%20I'd%20like%20to%20schedule%20a%20clarity%20call%20with%20The%20Sunday%20Team." 
+            href="https://wa.me/31681150445?text=Hi%21%20I'd%20like%20to%20get%20started%20with%20The%20Sunday%20Team." 
             target="_blank"
             rel="noopener noreferrer"
             className="w-full py-4 bg-gray-900 text-white text-lg font-bold rounded-xl shadow-lg active:scale-95 transition text-center block"
           >
-            Book Clarity Call
+            Start Your Growth
           </a>
         </div>
       )}
@@ -338,7 +338,7 @@ const Hero = () => (
         </div>
         <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
         <div className="text-center">
-          <p className="text-4xl font-extrabold text-gray-900">150K+</p>
+          <p className="text-4xl font-extrabold text-gray-900">406K+</p>
           <p className="text-sm text-gray-600 font-semibold mt-2">Total Views Delivered</p>
         </div>
       </div>
