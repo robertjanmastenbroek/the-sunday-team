@@ -279,7 +279,7 @@ const Hero = () => (
       {/* CTAs */}
       <div className="flex flex-col sm:flex-row gap-5 justify-center items-center animate-fade-in-up delay-300">
         <button 
-          onClick={() => window.open('https://calendly.com/', '_blank')} 
+          onClick={() => document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' })} 
           className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-lg font-bold rounded-full hover:shadow-2xl hover:shadow-indigo-500/30 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 group"
         >
           View Ministry Plans <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
