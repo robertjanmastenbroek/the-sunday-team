@@ -707,10 +707,10 @@ const Pricing = () => {
       description: "The '150k Reach' System. Dominate the algorithm with daily spiritual content.",
       features: [
         "30 Short-Form Videos (Daily Posting)",
-        "1 Full Sermon Video Edit (YouTube Long-Form)",
-        "3 Custom High-CTR Thumbnails",
+        "4 Full Sermon Video Edits",
+        "4 Custom High-CTR Thumbnails",
         "Theological Safety Check (Human Verified)",
-        "Priority Slack Support"
+        "Direct Support & Chat With Team"
       ],
       cta: "Start Growing",
       highlight: true
@@ -721,10 +721,10 @@ const Pricing = () => {
       description: "Complete creative partnership. We become your internal media department.",
       features: [
         "Everything in The Growth",
-        "Cinematic 'Electronic Worship' Editing Style",
-        "Dedicated Human Editor (No AI cuts)",
+        "Cinematic Custom Editing Style",
+        "Dedicated Human Editor & Strategist",
         "YouTube SEO & Keyword Strategy",
-        "Bi-Weekly Strategy Calls"
+        "Monthly Strategy Calls"
       ],
       cta: "Partner for Harvest",
       highlight: false
