@@ -225,7 +225,8 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/80 backdrop-blur-xl shadow-sm py-4 border-b border-white/20' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold tracking-tighter text-gray-900 flex items-center gap-1 group cursor-pointer select-none">
+        <div className="text-2xl font-bold tracking-tighter text-gray-900 flex items-center gap-3 group cursor-pointer select-none">
+          <img src="/favicon.png" alt="The Sunday Team" className="h-10 w-10" />
           The Sunday Team<span className="text-indigo-600 text-4xl leading-3 group-hover:text-purple-600 transition-colors">.</span>
         </div>
         
