@@ -575,7 +575,157 @@ const TeamSection = () => (
 );
 
 const AppFeature = () => (
-  {/* ...section removed as requested... */}
+  <section className="py-32 bg-white overflow-hidden">
+    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+      <div className="order-2 lg:order-1">
+        <div className="inline-block px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-6 border border-indigo-100">
+          Powered by Technology
+        </div>
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">Your Media Team,<br/>Now in Your Pocket.</h2>
+        <p className="text-gray-600 text-lg mb-10 leading-relaxed font-light">
+          Forget messy email threads with DropBox links. We give you a dedicated <strong>Ministry Portal App</strong> (powered by LeadConnector) to manage your content effortlessly.
+        </p>
+        
+        <div className="space-y-6">
+          {[
+            { icon: <CheckCircle className="text-green-500" size={24} />, text: "Approve clips in one tap while getting coffee." },
+            { icon: <MessageSquare className="text-indigo-500" size={24} />, text: "Chat directly with Robert-Jan & Roderick." },
+            { icon: <Download className="text-purple-500" size={24} />, text: "Download clips instantly to your phone." }
+          ].map((item, i) => (
+            <div key={i} className="flex items-center gap-5 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all hover:border-indigo-100 hover:-translate-x-1">
+              <div className="bg-gray-50 p-3 rounded-full">{item.icon}</div>
+              <span className="font-bold text-gray-700 text-lg">{item.text}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Phone Mockup - Slick Glass */}
+      <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+        <div className="relative border-gray-900 bg-gray-900 border-[10px] rounded-[3rem] h-[720px] w-[360px] shadow-2xl transform transition hover:scale-[1.01] duration-500 z-10 ring-4 ring-gray-100">
+          {/* Buttons */}
+          <div className="h-[32px] w-[3px] bg-gray-800 absolute -left-[13px] top-[72px] rounded-l-lg"></div>
+          <div className="h-[46px] w-[3px] bg-gray-800 absolute -left-[13px] top-[124px] rounded-l-lg"></div>
+          
+          <div className="rounded-[2.4rem] overflow-hidden w-full h-full bg-white relative flex flex-col">
+             
+             {/* Status Bar */}
+             <div className="h-12 bg-indigo-600 w-full flex justify-between items-center px-6 text-white text-[12px] font-bold z-20">
+                <span>9:41</span>
+                <div className="flex gap-2 items-center">
+                   <Signal size={14} />
+                   <Wifi size={14} />
+                   <Battery size={14} />
+                </div>
+             </div>
+
+             {/* App Header */}
+             <div className="bg-indigo-600 pb-8 px-6 rounded-b-[2.5rem] shadow-xl relative z-10">
+               <div className="flex justify-between items-center text-white mb-8">
+                 <div className="flex gap-3 items-center">
+                    <div className="w-12 h-12 rounded-full bg-indigo-400 border-2 border-white/50 overflow-hidden ring-2 ring-white/20">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User" className="w-full h-full object-cover"/>
+                    </div>
+                    <div>
+                        <p className="text-indigo-200 text-xs font-medium uppercase tracking-wide">Welcome back</p>
+                        <p className="font-bold text-xl leading-none">Pastor John</p>
+                    </div>
+                 </div>
+                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md hover:bg-white/20 transition">
+                     <MonitorPlay size={20} className="text-white" />
+                 </div>
+               </div>
+               
+               <div className="grid grid-cols-2 gap-4">
+                   <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-md border border-white/10">
+                        <p className="text-indigo-200 text-xs mb-1 font-bold uppercase">Ready to Post</p>
+                        <p className="text-white text-3xl font-bold">3</p>
+                   </div>
+                   <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-md border border-white/10">
+                        <p className="text-indigo-200 text-xs mb-1 font-bold uppercase">Weekly Reach</p>
+                        <p className="text-white text-3xl font-bold">12.4K</p>
+                   </div>
+               </div>
+             </div>
+
+             {/* App Body */}
+             <div className="p-6 space-y-6 bg-gray-50 flex-1 overflow-hidden relative">
+               {/* Reflection Glass Effect */}
+               <div className="absolute -top-40 -right-40 w-80 h-[500px] bg-gradient-to-b from-white/40 to-transparent transform rotate-45 pointer-events-none z-0"></div>
+
+               <div className="relative z-10">
+                 <div className="flex justify-between items-end mb-4">
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Pending Review</p>
+                    <p className="text-xs text-indigo-600 font-bold cursor-pointer hover:underline">See all</p>
+                 </div>
+                 
+                 {/* Main Video Card */}
+                 <div className="bg-white p-4 rounded-3xl shadow-lg border border-gray-100 relative group cursor-pointer hover:-translate-y-1 transition duration-300">
+                   <div className="flex gap-4 mb-4">
+                     <div className="w-20 h-24 bg-gray-900 rounded-2xl flex-shrink-0 relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition duration-700" alt="thumbnail" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-8 h-8 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40">
+                                <Play size={12} className="text-white ml-0.5" fill="currentColor" />
+                            </div>
+                        </div>
+                     </div>
+                     <div className="flex-1 min-w-0 flex flex-col justify-center">
+                       <div className="flex justify-between items-start mb-1">
+                           <p className="font-bold text-gray-900 text-sm leading-tight truncate">Hope in the Storm</p>
+                       </div>
+                       <p className="text-xs text-gray-400 mb-3">Clip #2 • Instagram Reel</p>
+                       <div className="flex gap-2">
+                         <button className="flex-1 bg-gray-900 text-white text-xs font-bold py-2.5 px-2 rounded-xl hover:bg-gray-800 flex items-center justify-center gap-1 transition shadow-lg shadow-gray-900/10">
+                            <CheckCircle size={12} /> Approve
+                         </button>
+                         <button className="px-3 bg-gray-100 text-gray-600 rounded-xl hover:bg-gray-200 transition">
+                            <MessageSquare size={14} />
+                         </button>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+               {/* Chat Preview */}
+               <div className="relative z-10">
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Messages</p>
+                  <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:bg-indigo-50/30 transition cursor-pointer">
+                      <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold text-xs shrink-0 ring-4 ring-indigo-50">RJ</div>
+                      <div className="flex-1 min-w-0">
+                          <p className="text-sm font-bold text-gray-900 flex justify-between">
+                            Robert-Jan
+                            <span className="text-[10px] text-gray-400 font-normal">2m ago</span>
+                          </p>
+                          <p className="text-xs text-gray-500 truncate mt-0.5 font-medium">The new hooks for Sunday are ready!</p>
+                      </div>
+                      <div className="w-2.5 h-2.5 bg-indigo-500 rounded-full animate-pulse"></div>
+                  </div>
+               </div>
+
+             </div>
+
+             {/* Bottom Nav */}
+             <div className="bg-white border-t border-gray-100 py-5 px-8 flex justify-between items-center text-gray-300 z-20">
+                <div className="flex flex-col items-center gap-1 text-indigo-600">
+                    <Smartphone size={24} />
+                </div>
+                <div className="flex flex-col items-center gap-1 hover:text-gray-600 cursor-pointer transition">
+                    <MessageSquare size={24} />
+                </div>
+                <div className="flex flex-col items-center gap-1 hover:text-gray-600 cursor-pointer transition">
+                    <Calendar size={24} />
+                </div>
+             </div>
+             
+             {/* Home Indicator */}
+             <div className="h-1.5 w-1/3 bg-gray-300 mx-auto rounded-full mb-3 z-20"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 );
 
 // --- PRICING SECTION ---
