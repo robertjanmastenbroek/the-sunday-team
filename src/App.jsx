@@ -733,45 +733,49 @@ const AppFeature = () => (
 const Pricing = () => {
   const plans = [
     {
-      name: "The Seed",
+      name: "Tier 1: The Seed",
       price: "$497",
-      description: "Consistency without the headache. Perfect for maintaining a professional baseline.",
+      description: 'The "Consistency" Package Ideal for Church Planters & Outreach.',
       features: [
-        "12 Short-Form Videos (3 Per Week)",
-        "Theological Safety Check (Human Verified)",
-        "Auto-Posting to YT, IG, FB & TikTok",
-        "Viral Hooks & Captions",
-        "Monthly Growth Report"
+        "7 Videos Per Week (1 Video / Day)",
+        "Done-For-You Posting (IG, TikTok, Shorts, FB)",
+        "Theological Safety: Human-verified for doctrine & context.",
+        "Native Social Style: High-retention captions & clean cuts (AI-Leveraged).",
+        "Turnaround: 48 Hours.",
+        "Cancel Anytime."
       ],
       cta: "Plant the Seed",
       highlight: false
     },
     {
-      name: "The Growth",
+      name: "Tier 2: The Flood (RECOMMENDED)",
       price: "$997",
-      description: "The '150k Reach' System. Dominate the algorithm with daily spiritual content.",
+      description: 'The "Domination" Package Ideal for Rapid Growth & Algorithm Authority.',
       features: [
-        "30 Short-Form Videos (Daily Posting)",
-        "4 Full Sermon Video Edits",
-        "4 Custom High-CTR Thumbnails",
-        "Theological Safety Check (Human Verified)",
-        "Direct Support & Chat With Team"
+        "21 Videos Per Week (3 Videos / Day)",
+        "Done-For-You Posting (IG, TikTok, Shorts, FB)",
+        "Theological Safety: Human-verified for doctrine & context.",
+        "Native Social Style: High-retention captions & clean cuts (AI-Leveraged).",
+        "Monthly Strategy Call: We review what’s working.",
+        "Priority Support.",
+        "Cancel Anytime."
       ],
-      cta: "Start Growing",
+      cta: "Start the Flood",
       highlight: true
     },
     {
-      name: "The Harvest",
+      name: "Tier 3: The Harvest",
       price: "$2,497",
-      description: "Complete creative partnership. We become your internal media department.",
+      description: 'The "Ministry Partner" Package Ideal for Established Brands & High-End Aesthetic.',
       features: [
-        "Everything in The Growth",
-        "Cinematic Custom Editing Style",
-        "Dedicated Human Editor & Strategist",
-        "YouTube SEO & Keyword Strategy",
-        "Monthly Strategy Calls"
+        "Custom Volume Strategy (Tailored to your goals)",
+        "Done-For-You Posting",
+        "Bespoke Branding: Custom fonts, church colors, motion graphics, and \"Glassmorphism\" styling.",
+        "Manual Editing: Hand-crafted by our creative team (No AI-look).",
+        "Full Sermon Edit: We polish the full YouTube message.",
+        "Dedicated Account Manager: Direct access to Robert-Jan & Roderick."
       ],
-      cta: "Partner for Harvest",
+      cta: "Harvest Partnership",
       highlight: false
     }
   ];
